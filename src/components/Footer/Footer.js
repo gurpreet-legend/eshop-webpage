@@ -5,12 +5,12 @@ import { IoMdArrowBack } from "react-icons/io";
 
 const Footer = () => {
     return (
-        <div className='footer flex'>
+        <div className='footer flex flex-col md:flex-row justify-center items-center'>
             <Link to="#" className="flex items-center text-lg grow">
                 <IoMdArrowBack />
                 <span className="ml-4">Back</span>
             </Link>
-            <div className="space-x-5">
+            <div className="md:space-x-5">
                 <button className="rounded-full border-2 px-9 py-3 text-sm hover:bg-teal-300 hover:text-white hover:border-teal-300">
                     CONTINUE SHOPPING
                 </button>
