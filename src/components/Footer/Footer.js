@@ -5,7 +5,7 @@ import { IoMdArrowBack } from "react-icons/io";
 
 const Footer = () => {
     return (
-        <div className='footer flex flex-col md:flex-row justify-center items-center'>
+        <div className='footer flex flex-col md:flex-row justify-center items-center mt-16'>
             <Link to="#" className="flex items-center text-lg grow">
                 <IoMdArrowBack />
                 <span className="ml-4">Back</span>
