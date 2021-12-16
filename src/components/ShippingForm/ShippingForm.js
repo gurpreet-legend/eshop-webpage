@@ -1,20 +1,44 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext"
 
 
 const ShippingForm = () => {
-    const {currentUser} = useAuth()
+    const [error, setError] = useState("")
+    const {currentUser, logout} = useAuth()
+    const navigate = useNavigate()
+
+    async function handleLogout () {
+        setError('')
+
+        try{
+            await logout()
+            navigate('/')
+        } catch {
+            setError("Failed to logout")
+        }
+    }
 
     return (
         <div>
             <div className="auth space-x-2">
-                {currentUser ? (<h1>Email: <span>{currentUser.email}</span></h1>) : ''}
-                <Link to="/login">
-                    <button className="rounded-full border-2 px-9 py-3 text-sm bg-teal-300 text-white">LOG IN</button>
-                </Link>
-                <Link to="/signup">
-                    <button className="rounded-full border-2 px-9 py-3 text-sm border-gray-300 hover:bg-teal-300 hover:text-white hover:border-teal-300"> SIGN UP</button>
-                </Link>
+                {currentUser ? 
+                (
+                    <>
+                        <h1 className="text-lg mb-4">Email: <span className="font-bold text-gray-500">{currentUser.email}</span></h1>
+                        <button onClick={handleLogout} className="rounded-full border-2 px-9 py-3 text-sm bg-red-300 text-white">LOG OUT</button>
+                       
+                    </>
+                ) : (
+                <>
+                    <Link to="/login">
+                        <button className="rounded-full border-2 px-9 py-3 text-sm bg-teal-300 text-white">LOG IN</button>
+                    </Link>
+                    <Link to="/signup">
+                        <button className="rounded-full border-2 px-9 py-3 text-sm border-gray-300 hover:bg-teal-300 hover:text-white hover:border-teal-300"> SIGN UP</button>
+                    </Link>
+                </>
+                )}
             </div>
             <h1 className="text-lg my-6">Shipping Information</h1>
             <form className="grid grid-cols-2 grid-rows-4 gap-4 gap-x-6">
