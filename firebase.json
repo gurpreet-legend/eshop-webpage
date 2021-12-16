@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "build",
-    "target": "eshop-webpage",
     "ignore": [
       "firebase.json",
       "**/.*",
