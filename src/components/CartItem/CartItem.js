@@ -6,7 +6,6 @@ const CartItem = ({item}) => {
             <div className='flex items-center space-x-5 my-5 hover:bg-gray-300 py-2 px-5 rounded-full'>
                 <img 
                     src={item.imgSrc} 
-                    alt="image" 
                     className='w-20 h-20 rounded-full object-cover'
                 />
                 <div className='flex flex-col grow'>

@@ -21,7 +21,7 @@ const ItemsInfo = [
 ]
 
 let totalCost = 0;
-ItemsInfo.map((item) => {
+ItemsInfo.forEach((item) => {
     totalCost += item.cost
 })
 
@@ -41,7 +41,7 @@ const Cart = () => {
                 <span>${totalCost}</span>
             </div>
 
-            <div className="freeshipDetails flex text-lg items-center justify-center py-9">
+            <div className="freeshipDetails flex text-lg items-center justify-center pt-9">
                 <FiTruck className="text-xl"/>
                 <p className="text-gray-400 text-center"> You are <span className="text-black">${freeShippingCost.toFixed(2)}</span> away from free shipping!</p>  
             </div>
