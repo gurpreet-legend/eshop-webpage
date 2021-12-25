@@ -1,4 +1,7 @@
 # eshop-webpage
+## Features 🎨
+* Firebase authentication
+* Firebase Hosting
 ## Hostlink 🌐
 [eshop-webpage.web.app](https://eshop-webpage.web.app/) 
 ## Features
